@@ -145,6 +145,35 @@
         }
 
         /* Hero Section */
+
+                .logo-img {
+            height: 40px; /* Adjust height as needed */
+            width: auto; /* Maintains aspect ratio */
+            transition: all 0.3s ease;
+        }
+        
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Update the existing .logo class */
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            letter-spacing: -0.02em;
+            display: flex; /* Add this */
+            align-items: center; /* Add this */
+        }
+        
+        /* Remove the sparkle effect for image logo */
+        .logo::after {
+            display: none; /* Hide sparkle when using image */
+        }
         .hero {
             min-height: 100vh;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
