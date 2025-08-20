@@ -81,28 +81,18 @@
         }
 
         .logo {
-            font-size: 2rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
         }
 
-        .logo::after {
-            content: '✨';
-            position: absolute;
-            top: -8px;
-            right: -25px;
-            font-size: 1rem;
-            animation: sparkle 2s infinite;
+        .logo img {
+            height: 40px;
+            width: 40px;
+            transition: all 0.3s ease;
         }
-
-        @keyframes sparkle {
-            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
-            50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+        
+        .logo img:hover {
+            transform: scale(1.05);
         }
 
         .nav-links {
@@ -145,35 +135,6 @@
         }
 
         /* Hero Section */
-
-                -img {
-            height: 40px; /* Adjust height as needed */
-            width: 40px; /* Maintains aspect ratio */
-            transition: all 0.3s ease;
-        }
-        
-        -img:hover {
-            transform: scale(1.05);
-        }
-        
-        /* Update the existing .logo class */
-        .logo {
-            font-size: 2rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-            letter-spacing: -0.02em;
-            display: flex; /* Add this */
-            align-items: center; /* Add this */
-        }
-        
-        /* Remove the sparkle effect for image logo */
-        .logo::after {
-            display: none; /* Hide sparkle when using image */
-        }
         .hero {
             min-height: 100vh;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
@@ -1031,6 +992,29 @@
             margin: 0;
         }
 
+        /* Animation keyframes */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 1200px) {
             .stories-grid {
@@ -1118,12 +1102,9 @@
     <!-- Header -->
     <header class="header">
         <nav class="nav">
-<!--             <div class="logo">ConnectED</div> -->
-            <!-- New image logo -->
-
-<div class="logo">
-    <img src="https://raw.githubusercontent.com/ari-rachmat/connected/main/Assets/Images/Image20250724162918.png" alt="ConnectED Logo">
-</div>
+            <div class="logo">
+                <img src="https://raw.githubusercontent.com/ari-rachmat/connected/main/Assets/Images/Image20250724162918.png" alt="ConnectED Logo">
+            </div>
             <ul class="nav-links">
                 <li><a href="#stories">Stories</a></li>
                 <li><a href="#voices">Voices</a></li>
@@ -1194,7 +1175,6 @@
             <p class="section-subtitle">Discover extraordinary tales of resilience, innovation, and human connection from communities across Indonesia. Each story is a window into lives that inspire and perspectives that matter.</p>
         </div>
         <div class="stories-grid">
-<!-- Replace one of the existing story cards with this: -->
             <article class="story-card">
                 <div class="story-image"></div>
                 <div class="story-content">
@@ -1206,7 +1186,7 @@
                         <span>👥 Youth Initiative</span>
                     </div>
                     <p class="story-excerpt">How Indonesian high school students raised $2,400 and built 6 toilets to combat stunting on a remote island through community partnership and simple solutions.</p>
-                    <a href="papagarang-article.html" class="read-more">Read Full Story</a>
+                    <a href="/papagarang-article.html" class="read-more">Read Full Story</a>
                 </div>
             </article>
             
